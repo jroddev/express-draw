@@ -1,7 +1,3 @@
-//
-// Created by jarrod on 7/9/20.
-//
-
 #ifndef EXPRESS_DRAW_DRAWTYPES_H
 #define EXPRESS_DRAW_DRAWTYPES_H
 

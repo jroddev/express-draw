@@ -1,7 +1,3 @@
-//
-// Created by jarrod on 1/9/20.
-//
-
 #ifndef EXPRESS_DRAW_DRAW_H
 #define EXPRESS_DRAW_DRAW_H
 
