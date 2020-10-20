@@ -31,18 +31,10 @@ namespace Draw {
         float lineWidth = 1.0F;
     };
 
-    struct Character {
-        char character;
-        glm::vec2 position;
-        glm::vec2 size;
-        float rotation;
-        glm::vec4 color;
-    };
-
-    struct Text {
+    struct TextBlock {
         std::string font;
         int fontSize;
-        std::vector<Character> characters;
+        std::string text;
     };
 }
 
