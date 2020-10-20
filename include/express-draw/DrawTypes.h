@@ -31,10 +31,11 @@ namespace Draw {
     };
 
     struct TextBlock {
-        std::string font;
-        int fontSize;
-        std::string text;
+        Transform2D transform;
         glm::vec2 blockSize;
+        int fontSize;
+        std::string font;
+        std::string text;
     };
 }
 
