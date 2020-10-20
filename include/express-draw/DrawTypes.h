@@ -35,6 +35,7 @@ namespace Draw {
         std::string font;
         int fontSize;
         std::string text;
+        glm::vec2 blockSize;
     };
 }
 
