@@ -1,11 +1,13 @@
 #ifndef EXPRESS_DRAW_DRAWTYPES_H
 #define EXPRESS_DRAW_DRAWTYPES_H
 
-#include "TextureIdentifier.h"
-
 #include <glm/glm.hpp>
 #include <vector>
 #include <string>
+
+#include "TextureIdentifier.h"
+#include "Transform2D.h"
+#include "Common.h"
 
 namespace Draw {
     struct Quad {
