@@ -3,10 +3,10 @@
 
 namespace Draw {
     template<typename Context, typename DrawType>
-    void draw(Context& context, DrawType data);
+    void draw(Context& context, const DrawType& data);
 
     template<typename Context, typename DrawType>
-    void drawWireframe(Context& context, DrawType data);
+    void drawWireframe(Context& context, const DrawType& data);
 }
 
 #endif //EXPRESS_DRAW_DRAW_H
