@@ -9,19 +9,16 @@
 
 namespace Draw {
     struct Quad {
-        glm::vec2 position;
-        glm::vec2 size;
-        float rotation;
+        Transform2D transform;
         glm::vec4 color;
         float borderWidth = 1.0F;
     };
 
     struct Sprite {
-        TextureIdentifier texture;
-        glm::vec2 position;
-        glm::vec2 size;
-        float rotation;
+        Transform2D transform;
         glm::vec4 color;
+        Rect textureRegion;
+        TextureIdentifier texture;
     };
 
     struct Line {
