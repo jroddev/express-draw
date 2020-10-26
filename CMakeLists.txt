@@ -18,7 +18,6 @@ FetchContent_MakeAvailable(glm)
 
 target_include_directories(
         ${PROJECT_NAME}
-        ${glm_SOURCE_DIR}
         INTERFACE $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
