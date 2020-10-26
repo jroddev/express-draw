@@ -23,7 +23,7 @@ target_include_directories(
 
 target_include_directories(
         ${PROJECT_NAME}
-        PUBLIC
+        PRIVATE
         ${glm_SOURCE_DIR})
 
 install(TARGETS ${PROJECT_NAME}
