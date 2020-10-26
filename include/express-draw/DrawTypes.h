@@ -10,10 +10,19 @@
 #include "Common.h"
 
 namespace Draw {
+    enum class PIVOT_POINT  {
+        TOP_LEFT,
+        TOP_RIGHT,
+        BOTTOM_LEFT,
+        BOTTOM_RIGHT,
+        CENTER
+    };
+
     struct Quad {
         Transform2D transform;
         glm::vec4 color;
         float borderWidth = 1.0F;
+        PIVOT_POINT pivotPoint;
     };
 
     struct Sprite {
@@ -21,6 +30,7 @@ namespace Draw {
         glm::vec4 color;
         Rect textureRegion;
         TextureIdentifier texture;
+        PIVOT_POINT pivotPoint;
     };
 
     struct Line {
@@ -36,6 +46,7 @@ namespace Draw {
         int fontSize;
         std::string font;
         std::string text;
+        PIVOT_POINT pivotPoint;
     };
 }
 
