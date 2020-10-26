@@ -8,7 +8,7 @@
 namespace Draw {
 
     namespace {
-        constexpr glm::mat4 identityMatrix = glm::mat4{1.0f};
+        const constexpr glm::mat4 identityMatrix = glm::mat4{1.0f};
     };
 
     struct Transform2D {

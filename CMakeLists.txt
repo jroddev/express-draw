@@ -10,10 +10,21 @@ project(express-draw
 
 add_library(${PROJECT_NAME} INTERFACE)
 
+FetchContent_Declare(
+        glm
+        GIT_REPOSITORY https://github.com/g-truc/glm
+        GIT_TAG 0.9.9.8)
+FetchContent_MakeAvailable(glm)
+
 target_include_directories(
         ${PROJECT_NAME}
         INTERFACE $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+
+target_include_directories(
+        ${PROJECT_NAME}
+        PUBLIC
+        ${glm_SOURCE_DIR})
 
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}_Targets
