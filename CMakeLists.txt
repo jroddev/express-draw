@@ -18,13 +18,9 @@ FetchContent_MakeAvailable(glm)
 
 target_include_directories(
         ${PROJECT_NAME}
+        ${glm_SOURCE_DIR}
         INTERFACE $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-
-target_include_directories(
-        ${PROJECT_NAME}
-        PRIVATE
-        ${glm_SOURCE_DIR})
 
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}_Targets
