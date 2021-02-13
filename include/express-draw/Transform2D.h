@@ -33,6 +33,10 @@ namespace Draw {
                     {width, height, 1.f}
             };
         }
+
+        static Transform2D multi(Transform2D parent, Transform2D child) {
+            return Transform2D::from(parent.getGetLocalSpaceMatrix() * child.getGetLocalSpaceMatrix());
+        }
     };
 }
 
