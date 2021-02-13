@@ -1,6 +1,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtx/euler_angles.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
 
 #ifndef EXPRESS_DRAW__TRANSFORM_H
 #define EXPRESS_DRAW__TRANSFORM_H
@@ -31,6 +32,21 @@ namespace Draw {
                     {x,     y,      0.f},
                     {0.f,   0.f,    rot},
                     {width, height, 1.f}
+            };
+        }
+
+        static Transform2D from (glm::mat4 matrix) {
+            glm::vec3 scale;
+            glm::quat rotation;
+            glm::vec3 translation;
+            glm::vec3 skew;
+            glm::vec4 perspective;
+            glm::decompose(matrix, scale, rotation, translation, skew,perspective);
+            glm::vec3 eulerRotation =  glm::degrees(glm::eulerAngles(rotation));
+            return {
+                    .position = translation,
+                    .rotation = eulerRotation,
+                    .scale = scale
             };
         }
 
