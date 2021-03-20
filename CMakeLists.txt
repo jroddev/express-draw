@@ -50,7 +50,7 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/express-draw DESTINATION include
 add_executable(express_draw_main main.cpp)
 set(BUILD_FLAGS "${BUILD_FLAGS} -std=c++20 -Wall -Wextra -pedantic")
 # Warnings as Errors
-set(BUILD_FLAGS "${BUILD_FLAGS} -Werror")
+#set(BUILD_FLAGS "${BUILD_FLAGS} -Werror")
 
 set_target_properties(express_draw_main PROPERTIES COMPILE_FLAGS ${BUILD_FLAGS})
 

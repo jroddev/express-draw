@@ -44,9 +44,9 @@ namespace Draw {
             glm::decompose(matrix, scale, rotation, translation, skew,perspective);
             glm::vec3 eulerRotation =  glm::degrees(glm::eulerAngles(rotation));
             return {
-                    translation,
-                    eulerRotation,
-                    scale
+                    .position = translation,
+                    .rotation = eulerRotation,
+                    .scale = scale
             };
         }
 
