@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
 include(FetchContent)
 include(GNUInstallDirs)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(express-draw
         VERSION 1.0.0
         LANGUAGES CXX
@@ -42,3 +43,22 @@ install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake)
 
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/express-draw DESTINATION include)
+
+
+# express_draw_main is just used for compiler errors
+
+add_executable(express_draw_main main.cpp)
+set(BUILD_FLAGS "${BUILD_FLAGS} -std=c++20 -Wall -Wextra -pedantic")
+# Warnings as Errors
+set(BUILD_FLAGS "${BUILD_FLAGS} -Werror")
+
+set_target_properties(express_draw_main PROPERTIES COMPILE_FLAGS ${BUILD_FLAGS})
+
+FetchContent_Declare(
+        glm
+        GIT_REPOSITORY https://github.com/g-truc/glm
+        GIT_TAG 0.9.9.8)
+FetchContent_MakeAvailable(glm)
+target_include_directories(express_draw_main PRIVATE
+        ${glm_SOURCE_DIR}
+        include)

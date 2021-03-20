@@ -16,7 +16,7 @@ namespace Draw {
                 hash(std::hash<std::string_view>()(texturePath)) {
         }
 
-        bool operator==(const auto &other) const {
+        bool operator==(const TextureIdentifier &other) const {
             return other.hash == hash;
         }
 
